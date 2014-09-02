@@ -1,0 +1,38 @@
+var jhon = [11,32,9,19,14,8,45,63,23]; //declaracion del vector 
+var b = 0; //contador para saber cuando el modulo es 0
+var i=0;
+console.log("numeros primos");
+while(i<jhon.length) // recorre el vector
+{
+if(jhon[i]!=0) //compara si hay numero diferente a 0
+{
+for(var k=1; k<=jhon[i]; k++){ // ciclo para descomponer el numero y se divide por 1,2,3....hasta el numero que hay en esa posicion
+if((jhon[i] % k) == 0){ // si el modulo o reciduo es = 0
+b++; //aumenta esta variable
+}
+}
+if(b==2){ // si b = 0 es primo pero solo hay dos numeros q lo divide el 1 y por el mismo numero
+console.log("primo el: ",jhon[i]); 
+b=0;
+}else{
+b=0;
+}
+i++;
+}
+}
+i=0;  // para sacar los q son pares e impares del  vector
+console.log("numeros pares e impares");
+while(i<jhon.length)
+{
+if(jhon[i]!=0)
+{
+if((jhon[i] % 2) == 0){   //se divide por 2 y si el reciduo es 0 es par y  si no es impar
+console.log("par el",jhon[i]);
+}else{
+if((jhon[i] % 2) == 1){
+console.log("impar el",jhon[i]);
+}
+}
+i++;
+}
+}
